@@ -5,6 +5,7 @@ public class LevelContoller : MonoBehaviour {
 
 	public GameObject platform;
 	public GameObject gameArea;
+	public GameObject boundary;
 	private float platformScaleZ;
 	private float lastPositionZ;
 
@@ -12,12 +13,13 @@ public class LevelContoller : MonoBehaviour {
 
 
 		platformScaleZ = platform.transform.GetChild (1).transform.localScale.z;
-		float z = transform.position.z - gameArea.transform.localScale.z;
-		float maxZ = z + gameArea.transform.localScale.z + transform.localScale.z;
+		float z = 0;
+		float maxZ = transform.position.z;
 
 		while (z < maxZ) {
 			CreatePlatform(z);
 			z += platformScaleZ;
+
 		}
 
 		lastPositionZ = z;
@@ -29,8 +31,7 @@ public class LevelContoller : MonoBehaviour {
 
 		Vector3 position = new Vector3 (0, 0, z);
 
-		Instantiate (platform, position, Quaternion.identity);
-	
+		Instantiate (platform, position, Quaternion.identity);	 
 	}
 
 	void FixedUpdate(){

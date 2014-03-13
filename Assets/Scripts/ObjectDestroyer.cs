@@ -32,7 +32,7 @@ public class ObjectDestroyer : MonoBehaviour {
 
 	void StartDestroyPart(){
 
-		float invokeTime = Random.Range(maxInvokeTime, maxInvokeTime);
+		float invokeTime = Random.Range(minInvokeTime, maxInvokeTime);
 		Rigidbody rb = parts [partIndex];
 
 		rb.isKinematic = false;

@@ -18,7 +18,6 @@ public class PlatformDestroyer : MonoBehaviour {
 
 		foreach (Rigidbody rg in rigidbodys) {
 			rg.angularVelocity = Random.insideUnitSphere * 5;
-			Debug.Log("dfs");
 		}
 	}
 
