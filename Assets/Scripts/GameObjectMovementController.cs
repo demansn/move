@@ -13,7 +13,7 @@ public class GameObjectMovementController : MonoBehaviour {
 		offset = transform.position;
 	}
 
-	void FixedUpdate () {
+	void LateUpdate () {
 
 		Vector3 newPosition = player.transform.position + offset;
 
@@ -22,14 +22,13 @@ public class GameObjectMovementController : MonoBehaviour {
 		}
 		
 		if (freezeY) {
-			newPosition.y = offset.y;
-			
+			newPosition.y = offset.y;			
 		}
 		
 		if (freezeZ) {
 			newPosition.z = offset.z;
 		}
 
-		transform.position = newPosition;
+		transform.position =   newPosition;
 	}
 }

@@ -12,7 +12,7 @@ public class LevelContoller : MonoBehaviour {
 
 
 		platformScaleZ = platform.transform.GetChild (1).transform.localScale.z;
-		float z = -gameArea.transform.localScale.z / 2;
+		float z = transform.position.z - gameArea.transform.localScale.z;
 		float maxZ = z + gameArea.transform.localScale.z + transform.localScale.z;
 
 		while (z < maxZ) {
@@ -41,7 +41,7 @@ public class LevelContoller : MonoBehaviour {
 
 		if (other.tag == "Platform") {
 
-						CreatePlatform (other.transform.position.z + platformScaleZ);
+			CreatePlatform (other.transform.position.z + platformScaleZ);
 
 		}
 
